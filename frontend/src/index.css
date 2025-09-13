@@ -1,0 +1,517 @@
+/* Navbar Container */
+.navbar {
+  background-color: #0d1117;
+  color: #fff;;
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+/* Inner Container */
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo span {
+  color: #909090;
+}
+
+.logo:hover {
+  color: #00d26a;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Hover & Active Effects */
+.nav-item:hover,
+.nav-item.active {
+  color: #00d26a;
+}
+
+.nav-item.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #00d26a;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  border-radius: 2px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Active State */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Nav */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #0d1117;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 220px;
+    padding: 20px;
+    box-shadow: -2px 4px 15px rgba(0, 0, 0, 0.4);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Workout Card Container */
+.workout-card {
+  background: #000000;
+  padding: 13px;
+  padding-top: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect */
+.workout-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Title Styling */
+.workout-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Text Styling */
+.workout-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #6d6d6d;
+}
+
+/* Date Styling */
+.workout-card .date {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+/* Workout Form */
+.workout-form {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  margin: 25px 0;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  border: 1px solid #24292f;
+}
+
+.workout-form:hover {
+  box-shadow: 0 6px 22px rgba(0, 210, 106, 0.25);
+  border-color: #00d26a;
+}
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+/* Form Title */
+.form-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Labels */
+.workout-form label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 500;
+  color: #e6edf3;
+}
+
+/* Inputs */
+.workout-form input {
+  width: 94%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #0d1117;
+  color: #fff;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workout-form input:focus {
+  border-color: #00d26a;
+  box-shadow: 0 0 6px rgba(0, 210, 106, 0.4);
+}
+
+/* Placeholder Style */
+.workout-form input::placeholder {
+  color: #7d8590;
+}
+
+/* Error Inputs */
+.workout-form input.error {
+  border-color: #ff4d4d;
+  background-color: rgba(255, 77, 77, 0.05);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #0d1117;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00b85a;
+  transform: translateY(-2px);
+}
+
+/* Error Message */
+.error-message {
+  background-color: rgba(255, 77, 77, 0.15);
+  color: #ff4d4d;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 77, 77, 0.4);
+  text-align: center;
+}
+
+/* Main Home Container */
+.home-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Left Column - Workout List */
+.workouts-section {
+  flex: 2;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Right Column - Form */
+.form-section {
+  flex: 1;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+/* No Workouts Message */
+.no-data {
+  color: #8b949e;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  background-color: #161b22;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #24292f;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-section {
+    position: static;
+    width: 100%;
+  }
+}
+
+
+
+/* Delete button */
+.delete-btn {
+  background: #000000;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 5px 6px;
+  margin-bottom: opx;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #4a4a4a;
+}
+
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f8f9fc;
+}
+
+/* Styling the form */
+.auth-form {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.auth-form:hover {
+  transform: scale(1.02);
+}
+
+/* Form heading */
+.auth-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Labels */
+.auth-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs */
+.auth-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #4e8cff;
+  outline: none;
+}
+
+/* Submit Button */
+.auth-form button {
+  padding: 12px;
+  background: #4e8cff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s;
+}
+
+.auth-form button:hover {
+  background: #3c74d8;
+  transform: translateY(-2px);
+}
+
+/* For smaller screens */
+@media (max-width: 480px) {
+  .auth-form {
+    width: 90%;
+    padding: 2rem;
+  }
+}
+
+/* USER EMAIL STYLING */
+.user-email {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-right: 10px;
+  font-weight: 500;
+  cursor: default;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #00ff40;
+  transform: scale(1.05);
+  color: #000000;
+}
+
+/* RESPONSIVE LOGOUT BUTTON FOR MOBILE */
+@media screen and (max-width: 768px) {
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+.about-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+}
+
+.about-content {
+  max-width: 800px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.about-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-content h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #444;
+  border-left: 4px solid #4a90e2;
+  padding-left: 8px;
+}
+
+/* Paragraphs & text */
+.about-content p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.about-content strong {
+  color: #111;
+}
+
+/* Lists */
+.about-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-content li {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* Links */
+.about-content a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.about-content a:hover {
+  text-decoration: underline;
+}
